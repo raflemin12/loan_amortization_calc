@@ -28,7 +28,7 @@ def fv_ordinary_annuity(pmt:float, n: float, r:float) -> float:
     fv = pmt*(((1+r)**n-1)/r)
     return fv
 
-def pmt_ordinary_annuity(fv:float, n: float, r:float) -> float:
+def pmt_fv_ordinary_annuity(fv:float, n: float, r:float) -> float:
     '''
     Returns the periodic payments needed to reach the future value given:
     fv = future value
@@ -37,3 +37,13 @@ def pmt_ordinary_annuity(fv:float, n: float, r:float) -> float:
     '''
     pmt = fv * (r / ((1+r)**n-1))
     return pmt
+
+def pv_ordinary_annuity(pmt: float, n:float, r=float) -> float:
+    '''
+    Returns the present value of an ordinary annuity given:
+    pmt = payment
+    n = number of periods
+    r = interest rate
+    '''
+    pv = pmt * (1-(1+r)**-n) / r
+    return pv
