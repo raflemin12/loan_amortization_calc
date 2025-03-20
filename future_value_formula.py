@@ -47,3 +47,13 @@ def pv_ordinary_annuity(pmt: float, n:float, r=float) -> float:
     '''
     pv = pmt * (1-(1+r)**-n) / r
     return pv
+
+def pmt_pv_ordinary_annuity(pv:float, n:float, r:float) -> float:
+    '''
+    Returns the periodic payments needed to satisfy a present value given:
+    pv = present value
+    n = number of periods
+    r = interest rate
+    '''
+    pmt = pv * (r / (1-(1+r)**-n))
+    return pmt
