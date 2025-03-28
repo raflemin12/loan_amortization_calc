@@ -15,8 +15,8 @@ def create_amor_dict(pv=float, n=float, r=float) -> dict:
 
     for period in range(1,n + 1):
         interest = balance * r
-        total = pmt - interest
-        amor_dict[str(period)] = [period, balance, pmt, interest, total]
-        balance = balance - total
+        principal = pmt - interest
+        amor_dict[str(period)] = [period, balance, pmt, interest, principal]
+        balance = balance - principal
 
     return amor_dict
