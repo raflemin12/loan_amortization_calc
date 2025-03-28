@@ -10,10 +10,10 @@ def create_amor_dict(pv=float, n=float, r=float) -> dict:
     '''
 
     pmt = pmt_pv_ordinary_annuity(pv, n, r)
+    balance = pv
     amor_dict = {}
 
     for period in range(1,n + 1):
-        balance = pv
         interest = balance * r
         total = pmt - interest
         amor_dict[str(period)] = [period, balance, pmt, interest, total]
