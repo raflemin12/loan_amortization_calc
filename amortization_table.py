@@ -15,4 +15,4 @@ def create_amor_dict(pv=float, n=float, r=float) -> dict:
     for period in range(1,n + 1):
         amor_dict[str(period)] = [period, pmt]
 
-    return pmt
+    return amor_dict
