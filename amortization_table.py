@@ -13,6 +13,7 @@ def create_amor_dict(pv=float, n=float, r=float) -> dict:
     amor_dict = {}
 
     for period in range(1,n + 1):
-        amor_dict[str(period)] = [period, pmt]
+        balance = pv
+        amor_dict[str(period)] = [period, balance, pmt]
 
     return amor_dict
