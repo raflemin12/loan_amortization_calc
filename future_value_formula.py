@@ -6,7 +6,7 @@ def fv_lump_sum(pv:float, n: float, r: float) -> float:
     r = interest rate
     '''
     fv = pv * ((1 + r)**n)
-    return fv
+    return round(fv,2)
 
 def pv_lump_sum(fv:float, n:float, r:float) -> float:
     '''
@@ -16,7 +16,7 @@ def pv_lump_sum(fv:float, n:float, r:float) -> float:
     r = interest rate
     '''
     pv = fv / ((1+r)**n)
-    return pv
+    return round(pv,2)
 
 def fv_ordinary_annuity(pmt:float, n: float, r:float) -> float:
     '''
@@ -26,7 +26,7 @@ def fv_ordinary_annuity(pmt:float, n: float, r:float) -> float:
     r = interest rate
     '''
     fv = pmt*(((1+r)**n-1)/r)
-    return fv
+    return round(fv,2)
 
 def pmt_fv_ordinary_annuity(fv:float, n: float, r:float) -> float:
     '''
@@ -36,7 +36,7 @@ def pmt_fv_ordinary_annuity(fv:float, n: float, r:float) -> float:
     r = interest rate
     '''
     pmt = fv * (r / ((1+r)**n-1))
-    return pmt
+    return round(pmt,2)
 
 def pv_ordinary_annuity(pmt: float, n:float, r=float) -> float:
     '''
@@ -46,7 +46,7 @@ def pv_ordinary_annuity(pmt: float, n:float, r=float) -> float:
     r = interest rate
     '''
     pv = pmt * (1-(1+r)**-n) / r
-    return pv
+    return round(pv,2)
 
 def pmt_pv_ordinary_annuity(pv:float, n:float, r:float) -> float:
     '''
@@ -56,4 +56,4 @@ def pmt_pv_ordinary_annuity(pv:float, n:float, r:float) -> float:
     r = interest rate
     '''
     pmt = pv * (r / (1-(1+r)**-n))
-    return pmt
+    return round(pmt,2)
