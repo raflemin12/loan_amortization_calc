@@ -13,9 +13,9 @@ def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
     balance = pv
     amor_dict = {}
 
-    for period in range(1,n + 1):
+    for period in range(1,n_period + 1):
         interest = round(balance * rate,2)
-        principal = pmt - round(interest,2)
+        principal = round(pmt - interest,2)
         amor_dict[str(period)] = [period, balance, pmt, interest, principal]
         balance = pv_ordinary_annuity(pmt, n=n_period-period, r=rate)
 
