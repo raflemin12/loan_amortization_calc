@@ -22,3 +22,10 @@ def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
 
     return amor_dict
 
+st.write('Annuity Calculator')
+
+calc = create_amor_dict(pv=100000, n_period=12, rate=0.05)
+
+df = pd.DataFrame.from_dict(calc)
+
+st.write(df)
