@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 from future_value_formula import pmt_pv_ordinary_annuity, pv_ordinary_annuity
 
 def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
@@ -20,3 +21,4 @@ def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
         balance = pv_ordinary_annuity(pmt, n=n_period-period, r=rate)
 
     return amor_dict
+
