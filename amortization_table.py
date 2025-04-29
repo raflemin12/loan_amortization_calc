@@ -17,16 +17,17 @@ def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
     for period in range(1,n_period + 1):
         interest = round(balance * rate,2)
         principal = round(pmt - interest,2)
-        amor_dict[str(period)] = [period, balance, pmt, interest, principal]
-        balance = pv_ordinary_annuity(pmt, n=n_period-period, r=rate)
+        ending_balance = pv_ordinary_annuity(pmt, n=n_period-period, r=rate)
+        amor_dict[str(period)] = [period, balance, pmt, interest, principal, ending_balance]
+        balance = ending_balance
 
     return amor_dict
 
-st.write('Annuity Calculator')
+st.write('Loan Calculator')
 
 calc = create_amor_dict(pv=100000, n_period=12, rate=0.05)
 
-df = pd.DataFrame.from_dict(calc, orient='index', 
-                            columns=['period', 'balance', 'payment', 'interest', 'principal'])
+df = pd.DataFrame.from_dict(calc, orient='index', columns=
+                            ['period', 'balance', 'payment', 'interest', 'principal', 'ending balance'])
 
 st.write(df)
