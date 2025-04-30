@@ -55,3 +55,5 @@ df = pd.DataFrame.from_dict(calc, orient='index', columns=
 )
 
 st.write(df)
+
+st.bar_chart(data = df[['period','interest', 'principal']], x = 'period')
