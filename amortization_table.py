@@ -46,6 +46,12 @@ int_rate = st.number_input(label = 'Interest Rate',
 calc = create_amor_dict(pv=loan_amount, n_period=num_period, rate=int_rate)
 
 df = pd.DataFrame.from_dict(calc, orient='index', columns=
-                            ['period', 'balance', 'payment', 'interest', 'principal', 'ending balance'])
+                            ['period',
+                             'balance',
+                             'payment',
+                             'interest',
+                             'principal',
+                             'ending balance']
+)
 
 st.write(df)
