@@ -33,6 +33,7 @@ loan_amount = st.number_input(label = 'Loan Amount',
 
 num_period = st.number_input(label = 'Number of Periods',
                              min_value = 1,
+                             max_value = 30,
                              value = 'min',
                              step = 1)
 
