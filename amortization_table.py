@@ -23,7 +23,7 @@ def create_amor_dict(pv=float, n_period=float, rate=float) -> dict:
 
     return amor_dict
 
-st.write('Loan Calculator')
+st.title('Loan Calculator')
 
 loan_amount = st.number_input(label = 'Loan Amount',
                               min_value = 0.1,
